@@ -1,0 +1,16 @@
+# Ignore Python virtual environment
+venv/
+.venv/
+tf_env/
+tf_enf
+# Cache dan file Python
+__pycache__/
+*.pyc
+*.pyo
+pet_breed_classifier_final.h5
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings (jika pakai)
+.vscode/
+.git
