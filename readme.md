@@ -1,6 +1,6 @@
 ## Deskripsi Proyek
 
-**Pet Breed Classifier** adalah aplikasi berbasis web yang dibangun dengan Streamlit dan TensorFlow untuk mengidentifikasi ras anjing atau kucing dari foto. Aplikasi ini memanfaatkan model ResNet101 yang telah dilatih (transfer learning) untuk mengklasifikasikan gambar ke dalam berbagai ras hewan peliharaan. Fitur utama:
+**CatXDog** adalah aplikasi berbasis web yang dibangun dengan Streamlit dan TensorFlow untuk mengidentifikasi ras anjing atau kucing dari foto. Aplikasi ini memanfaatkan model ResNet101 yang telah dilatih (transfer learning) untuk mengklasifikasikan gambar ke dalam berbagai ras hewan peliharaan. Fitur utama:
 
 * Deteksi otomatis dan pengunduhan model dari Google Drive.
 * Preprocessing gambar dengan `tf.keras.applications.resnet.preprocess_input`.
