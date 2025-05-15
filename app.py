@@ -6,7 +6,7 @@ import os
 import cv2
 from PIL import Image
 import gdown
-
+import base64
 
 class BreedClassifier:
     """Main class for handling pet breed classification."""
@@ -134,13 +134,28 @@ class PetBreedClassifierUI:
         """Initialize UI with a classifier."""
         self.classifier = classifier
         self.setup_page_config()
+        # Path gambar
+        img_path = "Logo.jpg"
+        img_base64 = self.get_base64_image(img_path)
+        st.markdown(
+            f"""
+            <div style="text-align: center;">
+                <img src="data:image/jpg;base64,{img_base64}" width="200"/>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
         self.apply_custom_css()
+    def get_base64_image(self, path):
+        with open(path, "rb") as img_file:
+            return base64.b64encode(img_file.read()).decode()
+
     
     @staticmethod
     def setup_page_config():
         """Configure Streamlit page settings."""
         st.set_page_config(
-            page_title="Pet Breed Classifier",
+            page_title="CatXDog",
             page_icon="🐾",
             layout="centered",
             initial_sidebar_state="collapsed"
@@ -162,7 +177,7 @@ class PetBreedClassifierUI:
     
     def render_header(self):
         """Render the application header."""
-        st.markdown('<p class="custom-header">🐾 Pet Breed Classifier</p>', unsafe_allow_html=True)
+        st.markdown('<p class="custom-header">🐾 Cat and Dog Breeds Classifier</p>', unsafe_allow_html=True)
         st.markdown('Upload foto anjing atau kucing untuk mengetahui breed-nya!')
     
     def get_image_input(self):
@@ -213,7 +228,7 @@ class PetBreedClassifierUI:
     def render_footer(self):
         """Render the application footer."""
         st.markdown(
-            '<div class="footer">Pet Breed Classifier menggunakan ResNet101 dengan transfer learning</div>', 
+            '<div class="footer">CatXDog menggunakan ResNet101 dengan transfer learning</div>', 
             unsafe_allow_html=True
         )
     
