@@ -28,15 +28,32 @@ class BreedClassifier:
     
     @staticmethod
     def download_model(model_path):
-        """Download model from Google Drive."""
+"""Download model from Google Drive with virus scan bypass and validation."""
         file_id = "1GDOwEq3pHwy1ftngOzCQCllXNtawsueI"
-        url = f"https://drive.google.com/uc?id={file_id}"
-        try:
-            gdown.download(url, model_path, quiet=False)
-            return True
-        except Exception as e:
-            st.error(f"Failed to download model: {e}")
-            return False
+        url = f"https://drive.usercontent.google.com/download?id=1GDOwEq3pHwy1ftngOzCQCllXNtawsueI&confirm=t&uuid=47793b2f-79f0-41ea-805d-13d7cc36f792"  # Add &confirm=t
+        
+        for attempt in range(max_retries):
+            try:
+                st.info(f"Mengunduh model (usaha ke-{attempt+1})...")
+                gdown.download(url, model_path, quiet=False)
+                
+                # Validasi ukuran file (minimal 1MB)
+                if os.path.exists(model_path):
+                    file_size = os.path.getsize(model_path)
+                    if file_size < 1024 * 1024:  # Jika kurang dari 1MB
+                        os.remove(model_path)
+                        raise Exception("File terlalu kecil, kemungkinan korup atau akses ditolak.")
+                    return True
+                else:
+                    raise Exception("File tidak ditemukan setelah download.")
+            
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    st.warning(f"Download gagal: {e}, mencoba lagi dalam 5 detik...")
+                    time.sleep(5)
+                else:
+                    st.error(f"Gagal mengunduh model setelah {max_retries} usaha: {e}")
+                    return False
 
     def __init__(self):
         """Initialize the classifier with model and breed information."""
