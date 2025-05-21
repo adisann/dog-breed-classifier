@@ -30,7 +30,7 @@ class BreedClassifier:
     def download_model(model_path, max_retries=3):
         """Download model from Google Drive with automatic virus scan bypass and retries."""
         file_id = "1GDOwEq3pHwy1ftngOzCQCllXNtawsueI"
-        url = f"https://drive.google.com/uc?id= {file_id}&confirm=t"  # Add &confirm=t to bypass virus scan
+        url = f"https://drive.google.com/uc?id={file_id}&confirm=t"  # Add &confirm=t to bypass virus scan
         
         for attempt in range(max_retries):
             try:
