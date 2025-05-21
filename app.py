@@ -41,7 +41,7 @@ class BreedClassifier:
     def load_model_cached(model_path):
         """Try standard load; if that fails, patch the HDF5 config."""
         try:
-            # first, try the simple way
+            # First, try the simple way
             return tf.keras.models.load_model(model_path, compile=False)
         except ValueError as err:
             # Look for the specific 'batch_shape' complaint
@@ -50,12 +50,18 @@ class BreedClassifier:
                 with h5py.File(model_path, 'r') as f:
                     raw = f.attrs.get('model_config')
                     if raw is None:
-                        raise
+                        raise ValueError("Model config not found in HDF5 file")
                     cfg = raw.decode('utf-8')
-                # rename batch_shape → batch_input_shape
-                cfg = cfg.replace('"batch_shape":', '"batch_input_shape":')
+                # Parse JSON
                 config = json.loads(cfg)
+                # Find and patch InputLayer
+                for layer in config['config']['layers']:
+                    if layer['class_name'] == 'InputLayer':
+                        if 'batch_shape' in layer['config']:
+                            layer['config']['batch_input_shape'] = layer['config'].pop('batch_shape')
+                # Create model from config
                 model = model_from_config(config, custom_objects={'InputLayer': InputLayer})
+                # Load weights
                 model.load_weights(model_path)
                 return model
             else:
@@ -76,8 +82,7 @@ class BreedClassifier:
 
     def download_model(self, max_retries=3):
         """Download model from Google Drive if missing or corrupt."""
-        # https://drive.google.com/uc?id={self.MODEL_FILE_ID}&export=download&confirm=t
-        url = f"https://drive.usercontent.google.com/download?id=1GDOwEq3pHwy1ftngOzCQCllXNtawsueI&confirm=t&uuid=47793b2f-79f0-41ea-805d-13d7cc36f792"
+        url = f"https://drive.google.com/uc?id={self.MODEL_FILE_ID}"
         for attempt in range(max_retries):
             try:
                 st.info(f"Downloading model (attempt {attempt+1})...")
@@ -151,7 +156,6 @@ class BreedClassifier:
             title = f"Dog: {name} ({conf:.1f} %)"
         return title, desc
 
-
 class PetBreedClassifierUI:
     """Streamlit UI for uploading images & showing predictions."""
     def __init__(self, clf: BreedClassifier):
@@ -196,7 +200,6 @@ class PetBreedClassifierUI:
                         t, d = self.clf.format_prediction(p["key"], p["conf"])
                         st.markdown(f'<div class="result"><b>{t}</b><p>{d}</p><div class="bar" style="width:{p["conf"]:.1f}%"></div></div>', unsafe_allow_html=True)
 
-
 def main():
     clf = BreedClassifier()
     ui  = PetBreedClassifierUI(clf)
@@ -205,7 +208,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-
+    
 
 # import streamlit as st
 # st.set_page_config(
