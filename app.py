@@ -92,7 +92,7 @@ class BreedClassifier:
     
     def download_model(self, max_retries=3):
         """Download model from Google Drive with improved error handling."""
-        https://drive.google.com/uc?id={self.MODEL_FILE_ID}&export=download&confirm=t
+        # https://drive.google.com/uc?id={self.MODEL_FILE_ID}&export=download&confirm=t
         url = f"https://drive.usercontent.google.com/download?id=1GDOwEq3pHwy1ftngOzCQCllXNtawsueI&confirm=t&uuid=47793b2f-79f0-41ea-805d-13d7cc36f792"
         
         for attempt in range(max_retries):
