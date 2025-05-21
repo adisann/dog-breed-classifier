@@ -7,15 +7,26 @@ import cv2
 from PIL import Image
 import gdown
 import base64
+import streamlit as st
+import tensorflow as tf
+import gdown
+import os
 
 class BreedClassifier:
-    """Main class for handling pet breed classification."""
-    
     MODEL_PATH = "pet_breed_classifier_final.h5"
-    
+
+    @st.cache_resource
+    def _load_model_with_cache(_self):
+        """Load model with caching."""
+        if not os.path.exists(_self.MODEL_PATH):
+            st.write("Mengunduh model dari Google Drive...")
+            file_id = "1GDOwEq3pHwy1ftngOzCQCllXNtawsueI"
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, _self.MODEL_PATH, quiet=False)
+        return tf.keras.models.load_model(_self.MODEL_PATH)
+
     def __init__(self):
-        """Initialize the classifier with model and class names."""
-        self.model = None
+        self.model = self._load_model_with_cache()
         self.class_names = None
         self.class_descriptions = self._build_class_descriptions()
         self.cat_breeds = {k for k, d in self.class_descriptions.items() if d.startswith("Kucing")}
@@ -251,14 +262,9 @@ class PetBreedClassifierUI:
 
 
 def main():
-    """Application entry point."""
-    # Create classifier
     classifier = BreedClassifier()
-    
-    # Create and run UI
     app = PetBreedClassifierUI(classifier)
     app.run()
-
 
 if __name__ == "__main__":
     main()
