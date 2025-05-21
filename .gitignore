@@ -14,3 +14,4 @@ pet_breed_classifier_final.h5
 # VSCode settings (jika pakai)
 .vscode/
 .git
+.devcontainer
