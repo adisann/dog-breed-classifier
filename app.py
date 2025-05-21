@@ -26,10 +26,11 @@ class BreedClassifier:
         return tf.keras.models.load_model(model_path)
     
     @staticmethod
+    
     def download_model(model_path, max_retries=3):
         """Download model from Google Drive with virus scan bypass and validation."""
         file_id = "1GDOwEq3pHwy1ftngOzCQCllXNtawsueI"
-        url = f"https://drive.google.com/uc?id={file_id}&confirm=t"  # Add &confirm=t
+        url = f"https://drive.usercontent.google.com/download?id=1GDOwEq3pHwy1ftngOzCQCllXNtawsueI&confirm=t&uuid=47793b2f-79f0-41ea-805d-13d7cc36f792"  # Add &confirm=t
         
         for attempt in range(max_retries):
             try:
