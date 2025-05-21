@@ -28,7 +28,7 @@ class BreedClassifier:
     
     @staticmethod
     def download_model(model_path):
-"""Download model from Google Drive with virus scan bypass and validation."""
+        """Download model from Google Drive with virus scan bypass and validation."""
         file_id = "1GDOwEq3pHwy1ftngOzCQCllXNtawsueI"
         url = f"https://drive.usercontent.google.com/download?id=1GDOwEq3pHwy1ftngOzCQCllXNtawsueI&confirm=t&uuid=47793b2f-79f0-41ea-805d-13d7cc36f792"  # Add &confirm=t
         
