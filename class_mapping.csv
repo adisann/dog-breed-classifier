@@ -1,41 +1,43 @@
-class_name,class_index
-abyssinian,0
-american_bulldog,1
-american_pit_bull_terrier,2
-basset_hound,3
-beagle,4
-bengal,5
-birman,6
-bombay,7
-boxer,8
-british_shorthair,9
-catdog,10
-chihuahua,11
-egyptian_mau,12
-english_cocker_spaniel,13
-english_setter,14
-garfield,15
-german_shorthaired,16
-great_pyrenees,17
-havanese,18
-japanese_chin,19
-keeshond,20
-leonberger,21
-maine_coon,22
-miniature_pinscher,23
-newfoundland,24
-not_catxdog,25
-persian,26
-pomeranian,27
-pug,28
-ragdoll,29
-russian_blue,30
-saint_bernard,31
-samoyed,32
-scottish_terrier,33
-shiba_inu,34
-siamese,35
-sphynx,36
-staffordshire_bull_terrier,37
-wheaten_terrier,38
-yorkshire_terrier,39
+nama_breed,label,description,jenis_hewan
+abyssinian,0,"Kucing Abyssinian memiliki tubuh ramping dan berotot dengan bulu pendek berwarna ticked tabby, sangat aktif dan ingin tahu.",kucing
+american_bulldog,1,"Anjing ras American Bulldog yang berotot dan kuat, biasanya memiliki rahang besar dan tubuh kekar.",anjing
+american_pit_bull_terrier,2,"Anjing American Pit Bull Terrier, dikenal karena tubuh atletis, dada lebar, dan karakter yang berani.",anjing
+basset_hound,3,"Basset Hound adalah anjing pendek dengan telinga panjang dan wajah sedih, terkenal karena penciumannya yang tajam.",anjing
+beagle,4,"Anjing Beagle berukuran kecil hingga sedang, bertelinga panjang terkulai dan memiliki indra penciuman yang tajam.",anjing
+bengal,5,"Kucing Bengal berpenampilan eksotis seperti macan tutul, dengan bulu berbintik dan energi tinggi.",kucing
+birman,6,"Kucing Birman memiliki bulu panjang, mata biru cerah, dan kaki putih seperti 'sarung tangan'.",kucing
+bombay,7,"Bombay adalah kucing berwarna hitam pekat dengan mata tembaga mencolok, sering disebut 'panther mini'.",kucing
+boxer,8,"Boxer adalah anjing berotot dengan wajah berkerut dan moncong pesek, penuh energi dan suka bermain.",anjing
+british_shorthair,9,"Kucing British Shorthair bertubuh bulat dan berotot, dengan bulu pendek lebat dan wajah bulat menggemaskan.",kucing
+catdog,10,"Kategori gabungan atau bercampur antara ciri-ciri kucing dan anjing, bisa jadi gambar editan atau makhluk fiktif.",campuran
+chihuahua,11,"Chihuahua adalah ras anjing terkecil dengan kepala apel dan mata besar, sering bersikap waspada dan protektif.",anjing
+dalmatian,12,"Dalmatian terkenal karena bulunya yang putih dengan bintik hitam, atletis dan penuh energi.",anjing
+doberman,13,Doberman Pinscher adalah anjing ramping dan berotot dengan penampilan elegan dan sifat protektif.,anjing
+egyptian_mau,14,Egyptian Mau adalah kucing langka dengan bulu bintik alami dan kecepatan lari tinggi.,kucing
+english_cocker_spaniel,15,"Anjing English Cocker Spaniel memiliki telinga panjang dan bulu bergelombang, dikenal ramah dan penuh semangat.",anjing
+english_setter,16,"English Setter adalah anjing berbulu panjang dan anggun, dengan corak bintik yang khas dan kepribadian lembut.",anjing
+german_shorthaired,17,"German Shorthaired Pointer adalah anjing berbadan atletis dengan bulu pendek dan bintik-bintik, ideal untuk berburu.",anjing
+great_pyrenees,18,"Anjing Great Pyrenees berukuran sangat besar dengan bulu tebal putih, digunakan sebagai penjaga ternak.",anjing
+havanese,19,"Anjing Havanese kecil dan berbulu panjang, dikenal karena kepribadiannya yang ceria dan penuh kasih.",anjing
+japanese_chin,20,"Japanese Chin adalah anjing kecil dengan ekspresi wajah seperti kucing, bulu panjang, dan anggun.",anjing
+keeshond,21,"Keeshond adalah anjing berbulu tebal dengan ekspresi wajah 'tersenyum', sering dijadikan anjing pendamping.",anjing
+leonberger,22,"Leonberger adalah anjing raksasa berbulu lebat dengan sikap lembut, sering dijuluki 'anjing singa'.",anjing
+maine_coon,23,"Maine Coon adalah ras kucing terbesar dengan bulu panjang, telinga berjumbai, dan sifat ramah.",kucing
+miniature_pinscher,24,"Miniature Pinscher adalah anjing kecil dan lincah, dengan penampilan menyerupai Doberman versi mini.",anjing
+newfoundland,25,"Anjing Newfoundland berukuran besar dengan bulu tebal dan watak lembut, sangat baik dalam berenang dan penyelamatan air.",anjing
+not_catxdog,26,"Kategori lain yang tidak termasuk dalam kucing atau anjing murni, kemungkinan berupa gambar non-hewani atau ambigu.",campuran
+persian,27,"Kucing Persia memiliki wajah datar dan bulu panjang yang lebat, dikenal tenang dan menyukai kenyamanan.",kucing
+pomeranian,28,"Pomeranian adalah anjing kecil dengan bulu lebat dan ekor melengkung ke belakang, berkepribadian ceria dan percaya diri.",anjing
+pug,29,"Pug adalah anjing kecil dengan wajah datar, mata besar, dan kerutan khas, sangat bersahabat dan menyenangkan.",anjing
+ragdoll,30,"Ragdoll adalah kucing besar berbulu panjang yang sangat tenang, sering mengendur saat digendong seperti boneka.",kucing
+russian_blue,31,"Russian Blue dikenal karena bulunya yang abu-abu kebiruan dan mata hijau cerah, berkarakter pemalu namun setia.",kucing
+saint_bernard,32,"Saint Bernard adalah anjing raksasa berbulu tebal, dikenal sebagai penyelamat di pegunungan Alpen.",anjing
+samoyed,33,"Samoyed memiliki bulu putih lebat dan senyum khas, sangat ramah dan cocok untuk cuaca dingin.",anjing
+scottish_terrier,34,"Scottish Terrier adalah anjing kecil dengan kaki pendek, kumis panjang, dan penampilan tegas.",anjing
+shiba_inu,35,"Shiba Inu adalah anjing kecil asal Jepang dengan bulu tebal, telinga tegak, dan sifat independen.",anjing
+siamese,36,"Kucing Siamese memiliki tubuh ramping, bulu pendek, dan warna kontras di wajah, telinga, kaki, dan ekor.",kucing
+siberian_husky,37,"Siberian Husky memiliki bulu tebal, mata tajam (sering biru), dan stamina luar biasa, cocok untuk menarik kereta salju.",anjing
+sphynx,38,"Sphynx adalah kucing tanpa bulu dengan kulit keriput dan telinga besar, sangat suka perhatian dan hangat.",kucing
+staffordshire_bull_terrier,39,"Staffordshire Bull Terrier bertubuh padat dan kuat, dikenal sangat setia dan baik terhadap anak-anak.",anjing
+wheaten_terrier,40,"Anjing Wheaten Terrier memiliki bulu lembut seperti sutra berwarna gandum, sangat aktif dan penuh kasih.",anjing
+yorkshire_terrier,41,"Yorkshire Terrier kecil, berbulu panjang dan halus, dikenal berani dan energik meskipun ukurannya mungil.",anjing
